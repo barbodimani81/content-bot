@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg
+alembic
+pydantic-settings
+python-dotenv
+httpx
+python-telegram-bot
