@@ -1,7 +1,10 @@
 from telegram import Update
+from app.services.content import generate_content
 from telegram.ext import (
     Application,
     CommandHandler,
+    MessageHandler,
+    filters,
     ContextTypes,
 )
 
@@ -22,6 +25,9 @@ class TelegramBot:
         self.application.add_handler(
             CommandHandler("start", self.start_command)
         )
+        self.application.add_handler(
+            MessageHandler(filters.TEXT & ~filters.COMMAND, self.handle_message)
+            )
 
     async def start_command(
         self,
@@ -31,6 +37,13 @@ class TelegramBot:
         await update.message.reply_text(
             "Siktir baba"
         )
+
+    async def handle_message(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        user_input = update.message.text
+
+        result = generate_content(user_input)
+
+        await update.message.reply_text(result["text"])
 
     def run(self):
         print("Telegram bot is running...")
