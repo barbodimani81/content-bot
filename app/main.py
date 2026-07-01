@@ -1,4 +1,4 @@
-from app.services.telegram import TelegramBot
+from app.bot.telegram import TelegramBot
 
 
 def main():
