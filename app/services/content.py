@@ -1,17 +1,10 @@
-from dataclasses import dataclass
-from typing import Dict
+from app.services.gemini import generate
 
 
-def generate_content(user_input: str) -> Dict:
-    """
-    MVP content generator (no LLM yet).
-    """
+async def generate_content(user_input: str) -> dict:
+    text = await generate(user_input)
 
     return {
-        "text": f"migam siktir kon",
+        "text": text,
         "platform": "telegram",
-        "meta": {
-            "version": "v1",
-            "source": "mock"
-        }
     }

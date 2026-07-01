@@ -39,9 +39,7 @@ class TelegramBot:
         )
 
     async def handle_message(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        user_input = update.message.text
-
-        result = generate_content(user_input)
+        result = await generate_content(update.message.text)
 
         await update.message.reply_text(result["text"])
 

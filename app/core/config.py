@@ -1,7 +1,14 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
 class Settings(BaseSettings):
     telegram_bot_token: str
+    gemini_api_key: str
+
+    gemini_model: str = "gemini-2.5-flash"
+    app_name: str = "Content Bot"
+    environment: str = "development"
+    log_level: str = "INFO"
 
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -10,4 +17,3 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
-
