@@ -10,9 +10,9 @@ class ContentService:
 
     async def generate(
         self,
-        user_input: str,
+        prompt: str,
     ) -> dict:
-        text = await self.provider.generate(user_input)
+        text = await self.provider.generate(prompt)
 
         return {
             "text": text,

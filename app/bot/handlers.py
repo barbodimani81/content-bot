@@ -2,9 +2,7 @@ from telegram import Update
 from telegram.ext import ContextTypes
 
 from app.orchestrators.content import ContentOrchestrator
-
-orchestrator = ContentOrchestrator()
-
+from app.core.container import orchestrator
 
 async def handle_message(
     update: Update,
