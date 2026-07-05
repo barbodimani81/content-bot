@@ -1,4 +1,4 @@
-from app.providers.gemini import generate
+from app.providers.llm.gemini import generate
 
 
 async def generate_content(user_input: str) -> dict:

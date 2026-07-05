@@ -25,7 +25,7 @@ app/
 ## Setup
 ### 1. Clone repository
 ```bash
-git clone https://github.com/your-username/content-bot.git
+git clone https://github.com/barbodimani81/content-bot.git
 cd content-bot
 
 2. Create virtual environment
