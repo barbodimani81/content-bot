@@ -1,10 +1,11 @@
 from app.providers.llm.gemini import generate
 
 
-async def generate_content(user_input: str) -> dict:
-    text = await generate(user_input)
+class ContentService:
+    async def generate(self, user_input: str) -> dict:
+        text = await generate(user_input)
 
-    return {
-        "text": text,
-        "platform": "telegram",
-    }
+        return {
+            "text": text,
+            "platform": "telegram",
+        }
