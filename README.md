@@ -1,5 +1,3 @@
-Here is a minimal, clean README.md that matches your current architecture without overengineering it.
-
 # Content Bot
 A Telegram bot that generates AI-powered content using LLM providers (Gemini, Grok, etc.).
 ## Features
