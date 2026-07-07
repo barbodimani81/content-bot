@@ -1,8 +1,17 @@
 from app.bot.telegram import TelegramBot
+from app.core.exceptions import ConfigurationError
+from app.core.logging import configure_logging, logger
 
 
 def main():
-    bot = TelegramBot()
+    configure_logging()
+
+    try:
+        bot = TelegramBot()
+    except ConfigurationError:
+        logger.exception("Bot configuration is invalid")
+        raise
+
     bot.run()
 
 

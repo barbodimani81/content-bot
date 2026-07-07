@@ -5,6 +5,9 @@ A Telegram bot that generates AI-powered content using LLM providers (Gemini, Gr
 - AI content generation (Gemini integration)
 - Modular provider system (Gemini, Grok, extensible)
 - Clean service-based architecture
+- Dependency-injected orchestration layer
+- In-memory conversation history with SQLAlchemy persistence hooks
+- Streaming-ready provider interface
 - Ready for FastAPI expansion
 ## Project Structure
 
@@ -41,6 +44,9 @@ Create a .env file:
 
 TELEGRAM_BOT_TOKEN=your_token_here
 GEMINI_API_KEY=your_key_here
+GROK_API_KEY=
+DATABASE_URL=
+LLM_PROVIDER=gemini
 
 5. Run the bot
 
@@ -65,6 +71,7 @@ This makes it easy to extend with:
 * FastAPI REST API
 * Multiple AI providers
 * Database storage
+* Streaming responses
 * Web dashboard
 
 Roadmap
