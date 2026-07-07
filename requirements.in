@@ -6,4 +6,5 @@ alembic
 pydantic-settings
 python-dotenv
 httpx
+google-genai
 python-telegram-bot
